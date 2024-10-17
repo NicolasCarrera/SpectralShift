@@ -2,7 +2,7 @@
 import { Header } from './components/Header'
 import { ThemeProvider } from './contexts/ThemeContext'
 import 'two-up-element'
-import Gallery from './pages/Gallery'
+import Gallery from './sections/Gallery'
 import Footer from './components/Footer'
 import { useTranslations } from './hooks/useTranslations'
 
