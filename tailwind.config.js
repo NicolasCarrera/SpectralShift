@@ -6,8 +6,13 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'creepster': ['Creepster', 'system-ui']
+      }
+    },
   },
   plugins: [],
 }
+
 
