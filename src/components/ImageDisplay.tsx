@@ -1,10 +1,11 @@
 import { AdvancedImage } from "@cloudinary/react";
 import { darkMode, lightMode } from "../utils/cloudinary";
+import { useTheme } from "../hooks/useTheme";
 
 export const ImageDisplay: React.FC = () => {
-
-  const publicId = 'cld-sample' //'a3vaswxyjw8nr2x5aej4'
-  const image = darkMode(publicId)
+  const { currentMode } = useTheme();
+  const publicId = 'cld-sample'
+  const image = currentMode === 'light' ? lightMode(publicId) : darkMode(publicId)
 
   return (
     <AdvancedImage cldImg={image} />
