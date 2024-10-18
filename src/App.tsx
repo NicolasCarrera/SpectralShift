@@ -5,6 +5,8 @@ import 'two-up-element'
 import Gallery from './sections/Gallery'
 import Footer from './components/Footer'
 import { useTranslations } from './hooks/useTranslations'
+import { ImageDisplay } from './components/ImageDisplay'
+import UploadWidget from './components/UploadWidget'
 
 const Content: React.FC = () => {
   const { t } = useTranslations();
@@ -50,7 +52,12 @@ const App: React.FC = () => {
             <section id="seccion1" className="min-h-screen flex items-center justify-center">
               <div className='grid grid-cols-2 gap-10'>
                 <div>
-                  <img src="https://res.cloudinary.com/dr4fxcorr/image/upload/v1728838877/samples/look-up.jpg" alt="img 1" className="w-auto h-auto max-w-full max-h-full" />
+                  <div
+                    className='bg-white dark:bg-gray-800 border-dashed border-2 border-gray- dark:border-gray-600 aspect-square max-w-[480px] max-h-[480px] mb-10'
+                  >
+                    {/* <ImageDisplay /> */}
+                  </div>
+                  <UploadWidget />
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iure praesentium ad id rem enim laboriosam, a ipsam atque suscipit possimus accusantium, eaque laudantium consequatur illo, voluptatum vel. Ratione, iste.</p>
               </div>
