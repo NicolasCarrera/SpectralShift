@@ -1,12 +1,20 @@
+import { useTheme } from "../hooks/useTheme";
+import { useTranslations } from "../hooks/useTranslations";
+import { darkFilter, lighFilter } from "../utils/cloudinary";
+
 export default function Gallery() {
+  const { currentMode } = useTheme();
+  const { t } = useTranslations();
+
   const cloudinaryUrlProperties = 'f_auto,w_300,h_500,c_fill,g_auto'
+  const filters = currentMode === 'light' ? lighFilter.join('/') : darkFilter.join('/')
   const cloudinaryUrlImages = [
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/docs/blue_sweater_model`,
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/samples/look-up`,
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/woman-business-suit`,
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/samples/smile`,
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/woman-blackdress-stairs`,
-    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties}/samples/people/kitchen-bar`
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/docs/blue_sweater_model`,
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/samples/look-up`,
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/woman-business-suit`,
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/samples/smile`,
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/woman-blackdress-stairs`,
+    `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/samples/people/kitchen-bar`
   ]
   return (
     <div className="grid grid-cols-3 gap-4">
