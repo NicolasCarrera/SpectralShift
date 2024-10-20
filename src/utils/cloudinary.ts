@@ -7,7 +7,7 @@ const cld = new Cloudinary({
 })
 
 export const lighFilter = [
-  'e_gen_background_replace:prompt_sunny_meadow_clear_sky',
+  'e_gen_background_replace:prompt_autumn_forest_light',
   'e_improve'
 ]
 export const darkFilter = [
@@ -41,4 +41,12 @@ export const darkMode = (publicId: string): CloudinaryImage => {
   })
 
   return lightImage
+}
+
+export const defaultMode = (publicId: string): CloudinaryImage => {
+  const lightMode = cld.image(publicId);
+
+  lightMode.addTransformation('f_auto,w_500,h_500,c_fill,g_auto')
+
+  return lightMode
 }

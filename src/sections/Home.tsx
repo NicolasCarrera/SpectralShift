@@ -1,8 +1,16 @@
+import { useImage } from "../hooks/useImage";
 import { useTranslations } from "../hooks/useTranslations";
 import 'two-up-element'
+import { defaultMode } from "../utils/cloudinary";
+import { AdvancedImage } from "@cloudinary/react";
+import { ImageDisplay } from "../components/ImageDisplay";
 
 export default function Home() {
+  const { publicId } = useImage();
   const { t } = useTranslations();
+
+  const image = defaultMode(publicId ? publicId : 'samples/people/smiling-man')
+
   return (
     <div className='grid grid-cols-2 gap-10'>
       <div>
@@ -18,8 +26,8 @@ export default function Home() {
 
       <div className="flex flex-wrap justify-center items-center">
         <two-up>
-          <img src="https://res.cloudinary.com/demo/image/upload/v1690194782/docs/diy-house.jpg" alt="img 1" className="w-auto h-auto max-w-full max-h-full" />
-          <img src="https://res.cloudinary.com/demo/image/upload/e_art:zorro/v1690194782/docs/diy-house.jpg" alt="img 2" className="w-auto h-auto max-w-full max-h-full" />
+          <AdvancedImage cldImg={image} />
+          <ImageDisplay publicId={publicId ? publicId : 'samples/people/smiling-man'} />
         </two-up>
       </div>
     </div>
