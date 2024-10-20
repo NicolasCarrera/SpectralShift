@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
+import { useImage } from "../hooks/useImage";
 
 const cloudName = import.meta.env.VITE_CLOUD_NAME
 const uploadPreset = import.meta.env.VITE_UPLOAD_PRESET
 
 export default function UploadWidget(): JSX.Element {
-  const cloudinaryRef = useRef<any>(null); // Definimos cloudinaryRef
-  const widgetRef = useRef<any>(null); // Definimos widgetRef
+  const { setPublicId } = useImage();
+
+  const cloudinaryRef = useRef(null);
+  const widgetRef = useRef(null);
 
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
@@ -19,19 +22,11 @@ export default function UploadWidget(): JSX.Element {
         folder: "images", // Opcional: carpeta donde se guardan las imágenes
         clientAllowedFormats: ["image"], // Solo permite cargar imágenes
         showCompletedButton: false, // No mostrar botón "Done" por defecto
-        // Añade el add-on de detección facial avanzada
-        context: { detection: "adv_face" }, // Aplica la detección avanzada de atributos faciales
-        transformations: [
-          {
-            width: 500,
-            height: 500,
-            crop: "limit",
-          }
-        ],
       },
       (error: any, result: any) => {
         if (!error && result && result.event === "success") {
-          console.log("Upload successful!", result.info);
+          // console.log("Upload successful!", result.info);
+          setPublicId(result?.info.public_id)
         }
       }
     );

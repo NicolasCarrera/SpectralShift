@@ -6,6 +6,8 @@ import Playground from './sections/Playground'
 import Gallery from './sections/Gallery'
 import Footer from './components/Footer'
 import { useTranslations } from './hooks/useTranslations'
+import BackgroundImage from './components/BackgroundImage'
+import { ImageProvider } from './contexts/ImageContext'
 
 const Content: React.FC = () => {
   const { t } = useTranslations();
@@ -22,21 +24,23 @@ const App: React.FC = () => {
   return (
     <>
       <ThemeProvider>
-        <div className="min-h-screen text-gray-900 dark:text-white bg-white dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black">
-          <div className='bg-white '></div>
+        <div className="relative min-h-screen text-gray-900 dark:text-white">
+          <BackgroundImage />
           <Header />
           <main className="container mx-auto mt-8 p-4">
-            <section className="min-h-screen flex items-center justify-center">
-              <Home />
-            </section>
+            <ImageProvider>
+              <section className="min-h-screen flex items-center justify-center">
+                <Home />
+              </section>
 
-            <section id="seccion1" className="min-h-screen flex items-center justify-center">
-              <Playground />
-            </section>
+              <section id="seccion1" className="min-h-screen flex items-center justify-center">
+                <Playground />
+              </section>
 
-            <section className="min-h-screen flex items-center justify-center">
-              <Gallery />
-            </section>
+              <section className="min-h-screen flex items-center justify-center">
+                <Gallery />
+              </section>
+            </ImageProvider>
           </main>
           <Footer />
         </div>
