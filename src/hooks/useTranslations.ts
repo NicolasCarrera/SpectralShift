@@ -4,7 +4,7 @@ import { translations, TranslationKey } from '../utils/translations';
 export const useTranslations = () => {
   const { currentMode } = useTheme();
 
-  const t = (key: TranslationKey): string => {
+  const t = (key: TranslationKey) => {
     return translations[currentMode][key] || key;
   };
 

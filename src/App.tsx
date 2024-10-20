@@ -5,20 +5,8 @@ import Home from './sections/Home'
 import Playground from './sections/Playground'
 import Gallery from './sections/Gallery'
 import Footer from './components/Footer'
-import { useTranslations } from './hooks/useTranslations'
 import BackgroundImage from './components/BackgroundImage'
 import { ImageProvider } from './contexts/ImageContext'
-
-const Content: React.FC = () => {
-  const { t } = useTranslations();
-
-  return (
-    <main className="container mx-auto mt-8 p-4">
-      <h2 className="text-xl font-semibold mb-4">{t('welcome')}</h2>
-      <p>{t('description')}</p>
-    </main>
-  );
-};
 
 const App: React.FC = () => {
   return (
@@ -33,7 +21,7 @@ const App: React.FC = () => {
                 <Home />
               </section>
 
-              <section id="seccion1" className="min-h-screen flex items-center justify-center">
+              <section id="playground" className="min-h-screen flex items-center justify-center">
                 <Playground />
               </section>
 

@@ -5,6 +5,7 @@ import { darkFilter, lighFilter } from "../utils/cloudinary";
 export default function Gallery() {
   const { currentMode } = useTheme();
   const { t } = useTranslations();
+  const gallery = t('gallery');
 
   const cloudinaryUrlProperties = 'f_auto,w_300,h_500,c_fill,g_auto'
   const filters = currentMode === 'light' ? lighFilter.join('/') : darkFilter.join('/')
@@ -28,7 +29,9 @@ export default function Gallery() {
             src={urlImage}
             alt={`Example image ${index}`}
           />
-          <p className="text-center mt-4">Lorem ipsum dolor</p>
+          <p className="text-center mt-4">
+            {gallery.photoMessages[index]}
+          </p>
         </div>
       ))}
     </div>

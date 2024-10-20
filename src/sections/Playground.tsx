@@ -6,6 +6,8 @@ import { useTranslations } from "../hooks/useTranslations";
 export default function Playground() {
   const { publicId } = useImage();
   const { t } = useTranslations();
+  const playground = t('playground');
+
   return (
     <div className='grid grid-cols-2 gap-10'>
       <div>
@@ -19,7 +21,14 @@ export default function Playground() {
         </div>
         <UploadWidget />
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iure praesentium ad id rem enim laboriosam, a ipsam atque suscipit possimus accusantium, eaque laudantium consequatur illo, voluptatum vel. Ratione, iste.</p>
+      {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iure praesentium ad id rem enim laboriosam, a ipsam atque suscipit possimus accusantium, eaque laudantium consequatur illo, voluptatum vel. Ratione, iste.</p> */}
+      <ul className="list-decimal">
+        {
+          playground.instructions.map((instruction, index) => (
+            <li key={index} className="mb-2">{instruction}</li>
+          ))
+        }
+      </ul>
     </div>
   )
 }
