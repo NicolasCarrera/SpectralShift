@@ -19,11 +19,11 @@ export const ImageDisplay: React.FC<{ publicId: string }> = ({ publicId }) => {
   };
 
   return (
-    <div className="relative w-[500px] h-[500px]">
+    <div className="relative size-[500px]">
       {
         isLoading ?
           <div className="relative">
-            <div className="absolute flex items-center justify-center inset-0 bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-70">
+            <div className="absolute flex items-center justify-center inset-0 size-[500px] bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-70">
               <div role="status">
                 <svg aria-hidden="true" className="inline size-20 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
@@ -38,9 +38,9 @@ export const ImageDisplay: React.FC<{ publicId: string }> = ({ publicId }) => {
           <AdvancedImage cldImg={filteredImage} />
       }
       <AdvancedImage
+        className="hidden"
         cldImg={filteredImage}
         onLoad={handleFilteredImageLoad}
-        className="hidden"
       />
     </div>
   )
