@@ -1,4 +1,3 @@
-//import './App.css'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './components/Header'
 import Home from './sections/Home'

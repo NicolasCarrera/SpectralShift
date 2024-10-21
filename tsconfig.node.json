@@ -20,6 +20,7 @@
   },
   "include": [
     "vite.config.ts",
-    "two-up.d.ts"
+    "globals.d.ts",
+    "src/jsx-elements.d.ts"
   ]
 }
