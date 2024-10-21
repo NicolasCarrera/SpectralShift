@@ -8,10 +8,12 @@ const cld = new Cloudinary({
 
 export const lighFilter = [
   'e_gen_background_replace:prompt_autumn_forest_light',
+  'e_upscale',
   'e_improve'
 ]
 export const darkFilter = [
   'e_gen_background_replace:prompt_dark_forest_night',
+  'e_upscale',
   'e_saturation:-50',
   'e_contrast:40',
   'e_vibrance:30',
@@ -22,7 +24,7 @@ export const darkFilter = [
 export const lightMode = (publicId: string): CloudinaryImage => {
   const lightImage = cld.image(publicId);
 
-  lightImage.addTransformation('f_auto,w_500,h_500,c_fill,g_auto')
+  lightImage.addTransformation('f_auto,w_1000,h_1000,c_fill,g_auto')
 
   lighFilter.forEach(filter => {
     lightImage.addTransformation(filter)
@@ -34,7 +36,7 @@ export const lightMode = (publicId: string): CloudinaryImage => {
 export const darkMode = (publicId: string): CloudinaryImage => {
   const lightImage = cld.image(publicId);
 
-  lightImage.addTransformation('f_auto,w_500,h_500,c_fill,g_auto')
+  lightImage.addTransformation('f_auto,w_1000,h_1000,c_fill,g_auto')
 
   darkFilter.forEach(filter => {
     lightImage.addTransformation(filter)
@@ -46,7 +48,7 @@ export const darkMode = (publicId: string): CloudinaryImage => {
 export const defaultMode = (publicId: string): CloudinaryImage => {
   const lightMode = cld.image(publicId);
 
-  lightMode.addTransformation('f_auto,w_500,h_500,c_fill,g_auto')
+  lightMode.addTransformation('f_auto,w_1000,h_1000,c_fill,g_auto')
 
   return lightMode
 }

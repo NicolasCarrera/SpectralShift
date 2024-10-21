@@ -1,14 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="py-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">
-      <div className="container mx-auto text-center">
-        <ul className="flex justify-center space-x-4 mt-2">
-          <li>Powered by Cloudinary</li>
-          <li>Built with React and Tailwind</li>
-          <li>GitHub</li>
+    <footer className="bg-orange-900 dark:bg-gray-900 text-lg">
+      <div className="container mx-auto">
+        <ul className="flex flex-col gap-4 py-10">
+          <li><a className="underline" href="https://cloudinary.com/" target="_blank">Cloudinary</a></li>
+          <li><a className="underline" href="https://github.com/NicolasCarrera/SpectralShift.git" target="_blank">GitHub</a></li>
         </ul>
-        <p>&copy; 2024 This content aims to showcase Cloudinary's image transformation capabilities while maintaining the requested Halloween theme and mood shift between light and dark modes.</p>
       </div>
+      <p className="bg-orange-950 dark:bg-gray-950 text-center text-sm py-4">&copy; This content aims to showcase Cloudinary's image transformation capabilities while maintaining the requested Halloween theme and mood shift between light and dark modes 2024.</p>
     </footer>
   )
 }

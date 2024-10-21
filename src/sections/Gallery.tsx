@@ -18,7 +18,7 @@ export default function Gallery() {
     `https://res.cloudinary.com/demo/image/upload/${cloudinaryUrlProperties},${filters}/samples/people/kitchen-bar`
   ]
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {cloudinaryUrlImages.map((urlImage, index) => (
         <div
           key={index}
@@ -29,7 +29,7 @@ export default function Gallery() {
             src={urlImage}
             alt={`Example image ${index}`}
           />
-          <p className="text-center mt-4">
+          <p className="text-xl text-center mt-4">
             {gallery.photoMessages[index]}
           </p>
         </div>

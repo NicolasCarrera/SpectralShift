@@ -12,10 +12,10 @@ const App: React.FC = () => {
   return (
     <>
       <ThemeProvider>
-        <div className="relative min-h-screen text-gray-900 dark:text-white">
+        <div className="relative min-h-screen text-white">
           <BackgroundImage />
           <Header />
-          <main className="container mx-auto mt-8 p-4">
+          <main className="container mx-auto my-8 p-4">
             <ImageProvider>
               <section className="min-h-screen flex items-center justify-center">
                 <Home />

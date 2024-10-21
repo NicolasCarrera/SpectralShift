@@ -13,12 +13,12 @@ export default function Home() {
   const image = defaultMode(publicId ? publicId : 'samples/people/smiling-man')
 
   return (
-    <div className='grid grid-cols-2 gap-10'>
-      <div>
-        <h1 className="text-5xl font-bold mb-10 dark:font-creepster dark:tracking-widest">{home.title}</h1>
-        <p className='text-lg mb-20'>{home.paragraph}</p>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-16 p-8'>
+      <div className="flex flex-col justify-center space-y-4 gap-10">
+        <h1 className="text-5xl font-bold text-left dark:font-creepster dark:tracking-widest">{home.title}</h1>
+        <p className='text-lg text-left'>{home.paragraph}</p>
         <a
-          className='bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full text-2lg px-10 py-4 me-2 mb-2 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+          className='bg-orange-500 border border-orange-800 focus:outline-none hover:bg-orange-600 focus:ring-4 focus:ring-orange-900 rounded-full text-2lg px-10 py-4 me-2 mb-2 w-max dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
           href="#playground"
         >
           GET STARTED

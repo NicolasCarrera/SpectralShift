@@ -34,10 +34,10 @@ export default function UploadWidget(): JSX.Element {
 
   return (
     <button
-      className='bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full text-2lg px-10 py-4 me-2 mb-2 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+      className='bg-orange-500 border border-orange-800 focus:outline-none hover:bg-orange-600 focus:ring-4 focus:ring-orange-900 rounded-full text-2lg px-10 py-4 me-2 mb-2 w-max dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
       onClick={() => widgetRef.current.open()}
     >
-      Subir Imagen
+      UPLOAD IMAGE
     </button>
   );
 }
